@@ -1,8 +1,9 @@
 import java.util.Arrays;
+
 public class J005Arrays {
     public static void main(String[] args) {
         // Declare and initialize an array
-        int[] numbers = {2, 8, 4, 3, 1};
+        int[] numbers = { 2, 8, 4, 3, 1 };
 
         // Access elements in the array
         System.out.println("First element: " + numbers[0]);
@@ -27,23 +28,21 @@ public class J005Arrays {
         arr2[0] = 10; // Assign a value to the first element
         System.out.println("First element of arr2: " + arr2[0]);
 
-
         // Multi-dimensional array
         int[][] multiArray = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
         };
         System.out.println("\nMulti-dimensional array:");
         for (int i = 0; i < multiArray.length; i++) {
-            for (int j = 0; j < multiArray[i].length; j++)
-            {
+            for (int j = 0; j < multiArray[i].length; j++) {
                 System.out.print(multiArray[i][j] + " ");
             }
             System.out.println();
         }
-        
-        int[][] arr3 = new int[2][]; // Declare a 2D array with 2 rows and  no specified columns
+
+        int[][] arr3 = new int[2][]; // Declare a 2D array with 2 rows and no specified columns
         System.out.println(arr2);
         System.out.println(arr3);
         System.out.println(arr3[0]); // This will print the reference to the first row of arr3
@@ -52,7 +51,7 @@ public class J005Arrays {
         System.out.println(arr3[0]); // Now this will print the reference to the first row of arr3
         System.out.println(arr3[1]); // This will print the reference to the second row
 
-        //Array Methods
+        // Array Methods
         Arrays.sort(numbers); // Sort the array in ascending order
         System.out.println("Sorted array: " + Arrays.toString(numbers));
 
