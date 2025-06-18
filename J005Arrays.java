@@ -1,7 +1,8 @@
+import java.util.Arrays;
 public class J005Arrays {
     public static void main(String[] args) {
         // Declare and initialize an array
-        int[] numbers = {1, 2, 3, 4, 5};
+        int[] numbers = {2, 8, 4, 3, 1};
 
         // Access elements in the array
         System.out.println("First element: " + numbers[0]);
@@ -51,7 +52,19 @@ public class J005Arrays {
         System.out.println(arr3[0]); // Now this will print the reference to the first row of arr3
         System.out.println(arr3[1]); // This will print the reference to the second row
 
-        
+        //Array Methods
+        Arrays.sort(numbers); // Sort the array in ascending order
+        System.out.println("Sorted array: " + Arrays.toString(numbers));
+
+        int index = Arrays.binarySearch(numbers, 10); // Search for the value 10 in the sorted array
+        if (index >= 0) {
+            System.out.println("Value 10 found at index: " + index);
+        } else {
+            System.out.println("Value 10 not found in the array.");
+        }
+        // Copying arrays
+        int[] copiedArray = Arrays.copyOf(numbers, numbers.length); // Create a copy of the array
+        System.out.println("Copied array: " + Arrays.toString(copiedArray));
     }
 
 }
