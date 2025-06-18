@@ -41,6 +41,17 @@ public class J005Arrays {
             }
             System.out.println();
         }
+        
+        int[][] arr3 = new int[2][]; // Declare a 2D array with 2 rows and  no specified columns
+        System.out.println(arr2);
+        System.out.println(arr3);
+        System.out.println(arr3[0]); // This will print the reference to the first row of arr3
+        arr3[0] = new int[3]; // Initialize the first row with 3 columns
+        arr3[1] = new int[4]; // Initialize the second row with 4 columns
+        System.out.println(arr3[0]); // Now this will print the reference to the first row of arr3
+        System.out.println(arr3[1]); // This will print the reference to the second row
+
+        
     }
 
 }
