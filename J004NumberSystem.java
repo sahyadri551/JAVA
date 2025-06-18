@@ -17,3 +17,4 @@ public class J004NumberSystem {
         System.out.println("Hexadecimal: " + hexadecimal);
     }
 }
+  
