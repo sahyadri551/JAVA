@@ -220,5 +220,83 @@ public class J006Operators {
         BigDecimal bd5 = BigDecimal.valueOf(2.3).setScale(1);
         BigDecimal bd6 = bd4.subtract(bd5);
         System.out.println("Subtracting two BigDecimal values: " + bd6);
+
+        /*
+         * Reference Data type comparison
+         * When comparing reference data types (objects), the == operator checks if both references point to
+         * the same object in memory, while the equals() method checks if the contents of the objects are the same.
+         * It's important to use the equals() method for content comparison, especially when dealing with strings or custom objects.
+         * The == operator should be used for reference comparison,
+         * while the equals() method should be used for value comparison.
+         */
+        System.out.println("=======Reference Data Type Comparison=======");
+        Integer int1 = 129;
+        Integer int2 = 129;
+        System.out.println("Using == operator: " + (int1 == int2)); // false, because int1 and int2 are different Integer objects in memory
+        System.out.println("Using equals() method: " + int1.equals(int2)); // true, because the contents of both Integer objects are the same
+        
+        // Comparing strings
+        String str3 = "Hello";
+        String str4 = "Hello";
+        System.out.println("Using == operator for strings: " + (str3 == str4)); // true, because both references point to the same string literal in the string pool
+        System.out.println("Using equals() method for strings: " + str3.equals(str4)); // true  
+        String str5 = new String("Hello");
+        System.out.println("Using == operator with new String: " + (str3 == str5)); // false, because str3 and str5 are different objects in memory
+        System.out.println("Using equals() method with new String: " + str3.equals(str5)); // true, because the contents of both String objects are the same
+
+        /*
+         * =======Integer Caching=======
+         * Integer caching is a feature in Java where small integer values (from -128 to 127) are cached and reused to save memory.
+         * When you create an Integer object with a value within this range, Java uses the cached instance instead of creating a new object.
+         */
+        System.out.println("=======Integer Caching=======");
+        Integer cachedInt1 = 100; // This will use the cached instance
+        Integer cachedInt2 = 100; // This will also use the cached instance
+        System.out.println("Using == operator with cached integers: " + (cachedInt1 == cachedInt2)); // true, because both references point to the same cached instance
+        Integer uncachedInt1 = 200; // This will create a new Integer object outside the cached range
+        Integer uncachedInt2 = 200; // This will also create a new Integer object
+        System.out.println("Using == operator with uncached integers: " + (uncachedInt1 == uncachedInt2)); // false, because uncachedInt1 and uncachedInt2
+        // are different Integer objects in memory
+        System.out.println("Using equals() method with uncached integers: " + uncachedInt1.equals(uncachedInt2)); // true, because the contents of both Integer objects are the same
+
+        // Note: Integer caching in Java only applies to values between -128 and 127,
+        // so integers outside this range will not be cached and will create new Integer objects.
+        // For example, Integer int1 = 128; Integer int2 = 128;
+        // will create two different Integer objects, and the == operator will return false.
+        // However, for values between -128 and 127, the == operator will return true
+        // because those values are cached by the Integer class.
+        // For example, Integer int1 = 100; Integer int2 = 100;
+        // will return true because both int1 and int2 point to the same cached Integer object
+
+        // Creating Integer objects using different methods
+        System.out.println("=======Other Method Of Creating Integer Objects=======");
+        Integer int7 = new Integer(100); //Deprecated constructor, but still valid
+        Integer int8 = Integer.valueOf(100); // Preferred way to create Integer objects
+        Integer int9 = Integer.parseInt("100"); // Parsing a string to create an Integer
+        Integer int10 = Integer.valueOf(100); // This will use the cached instance for values between -128 and 127
+        System.out.println("Using new Integer(): " + (int7 == int8)); // false, because int7 is a new Integer object
+        System.out.println("Using Integer equals(): " + int7.equals(int8)); // true, because the contents of both Integer objects are the same
+        System.out.println("Using Integer.parseInt(): " + (int8 == int9)); // true, because int8 and int9 are both created from the same value and point to the
+        // same cached Integer object
+        System.out.println("Using Integer.valueOf(): " + (int8 == int10)); // true, because int8 and int10 are both created from the same value and point to the
+        // same cached Integer object
+
+        /*
+         * Array Comparison
+         * When comparing arrays in Java, the == operator checks if both references point to the same array object in memory.
+         * When comaring using equals() method, it checks if both references point to the same
+         * array object in memory. However, the equals() method for arrays does not compare the
+         * contents of the arrays. To compare the contents of two arrays, you should use the
+         * java.util.Arrays.equals() method, which checks if the contents of both arrays are the
+         * same.
+         */
+        System.out.println("=======Array Comparison=======");
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+        System.out.println("Using == operator for arrays: " + (arr1 == arr2)); // false, because arr1 and arr2 are different array objects in memory
+        System.out.println("Using equals() method for arrays: " + arr1.equals(arr2)); // false, because arr1 and arr2 are different array objects
+        System.out.println("Using Arrays.equals() method for arrays: " + java.util.Arrays.equals(arr1, arr2)); // true, because the contents of both arrays are the same
+
+
     }
 }
