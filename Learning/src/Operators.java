@@ -86,6 +86,17 @@ public class Operators {
         System.out.println("=======Logical Operators=======");
         boolean x = true, y = false;
         System.out.println("&& (Logical AND): " + (x && y));
+        System.out.println("&& (Logical AND): " + (false && 5/0 == 0)); // Demonstrating short-circuit evaluation
+        // The second part (5/0 == 0) will not be evaluated because the first part (false) is already false 
+        
+        //System.out.println("&& (Logical AND): " + (true && 5/0 == 0)); // This will throw an ArithmeticException
+        // Uncommenting the above line will cause an exception, so it's commented out
+
+        //System.out.println("|| (Logical OR): " + (false || 5/0 == 0)); // This will throw an ArithmeticException
+        // Uncommenting the above line will cause an exception, so it's commented out
+
+        System.out.println("|| (Logical OR): " + (true || 5/0 == 0)); // Demonstrating short-circuit evaluation
+        // The second part (5/0 == 0) will not be evaluated because the first part (true) is already true
         System.out.println("|| (Logical OR): " + (x || y));
         System.out.println("! (Logical NOT): " + (!x));
 
@@ -93,7 +104,7 @@ public class Operators {
          * =======Bitwise Operators=======
          * & (Bitwise AND) - Performs a bitwise AND operation
          * | (Bitwise OR) - Performs a bitwise OR operation
-         * ^ (Bitwise XOR) - Performs a bitwise XOR operation
+         * ^ (Bitwise XOR) - Performs a bitwise XOR( Exclusive OR ) operation 
          * ~ (Bitwise NOT) - Inverts the bits of the operand
          * << (Left shift) - Shifts bits to the left, filling with zeros
          * >> (Right shift) - Shifts bits to the right, preserving the sign bit
@@ -105,10 +116,18 @@ public class Operators {
         System.out.println("| (Bitwise OR): " + (e | f)); // Result: 0111 (7 in decimal)
         System.out.println("^ (Bitwise XOR): " + (e ^ f)); // Result: 0110 (6 in decimal)
         System.out.println("~ (Bitwise NOT): " + (~e)); // Inverts bits of e (e.g., 0101 becomes 1010, which is -6 in two's complement)
+        System.out.println("~ (Bitwise NOT): " + (~(-e))); // Inverts bits of -e (e.g., 1010 becomes 0101, which is 5 in two's complement) 
         System.out.println("<< (Left shift): " + (e << 1)); // Shifts bits of e to the left (e.g., 0101 becomes 1010, which is 10 in decimal)
         System.out.println(">> (Right shift): " + (e >> 1)); // Shifts bits of e to the right (e.g., 0101 becomes 0010, // which is 2 in decimal)
         System.out.println(">>> (Unsigned right shift): " + (e >>> 1)); // Shifts bits of e to the right, filling with zeros
         // (e.g., 0101 becomes 0010, which is 2 in decimal)
+
+        System.out.println("e in binary: " + Integer.toBinaryString(e)); // Displays e in binary
+        System.out.println("-e in binary: " + Integer.toBinaryString(-e)); // Displays -e in binary
+        System.out.println("f in binary: " + Integer.toBinaryString(f)); // Displays f in binary
+        System.out.println("~ (Bitwise NOT) in binary: " + Integer.toBinaryString(~e)); // Displays the result of ~e in binary
+
+        System.out.println(" binary of -5 to integer "+(byte)0b11111111111111111111111111111011);
 
         /*
          * =======Assignment Operators=======
