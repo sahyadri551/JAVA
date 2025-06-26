@@ -1,5 +1,7 @@
 // File: Operators.java
 import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 public class Operators {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -157,5 +159,66 @@ public class Operators {
         int h = 5, i = 10;
         int max = (h > i) ? h : i; // If h is greater than i, max is h; otherwise, max is i
         System.out.println("Ternary Operator: The maximum of " + h + " and " + i + " is " + " " + max);
+
+        /*
+         * =======Type Casting=======
+         * Type casting is the process of converting a variable from one type to another.
+         * There are two types of type casting:
+         * 1. Implicit Casting (Widening Conversion) - Automatically done by the compiler when converting a smaller data type to a larger data type.
+         * 2. Explicit Casting (Narrowing Conversion) - Manually done by the programmer when converting a larger data type to a smaller data type.
+         */
+        System.out.println("=======Type Casting=======");
+        // Implicit Casting (Widening Conversion)
+        int j = 100;
+        double d1 = j; // int to double
+        System.out.println("Implicit Casting (int to double): " + d1);
+        // Explicit Casting (Narrowing Conversion)
+        double d2 = 9.78;
+        int k = (int) d2; // double to int
+        System.out.println("Explicit Casting (double to int): " + k);
+
+        /*
+         * =======BigDecimal Arithmetic=======
+         * BigDecimal is used for precise decimal arithmetic, especially in financial calculations.
+         * It provides control over scale and rounding modes, which is crucial for avoiding precision issues in
+         * floating-point arithmetic.
+         * BigDecimal is immutable, meaning that operations on BigDecimal objects return new instances rather than
+         * modifying the original object.
+         * BigDecimal supports various operations like addition, subtraction, multiplication, division, and more.
+         * It is particularly useful when dealing with monetary values, where precision is critical.
+         * BigDecimal can be created using the BigDecimal(String) constructor or by using the valueOf() method.
+         * When performing division, you can specify the scale (number of decimal places) and the rounding mode to handle cases where the result is not exact.
+         * Common rounding modes include RoundingMode.HALF_UP, RoundingMode.DOWN, RoundingMode.UP, etc.
+         * BigDecimal also supports arithmetic operations like add(), subtract(), multiply(), and divide() with
+         * options for scale and rounding mode.
+         */
+        System.out.println("=======BigDecimal Arithmetic=======");
+        BigDecimal bd = BigDecimal.valueOf(20).setScale(2);
+        BigDecimal bd2 = BigDecimal.valueOf(3);
+        BigDecimal bd3 = bd.divide(bd2, RoundingMode.HALF_UP); // Dividing BigDecimal with scale and rounding mode
+        System.out.println("BigDecimal of 20 with scale 2: " + bd3);
+        // Note: BigDecimal is used for precise decimal arithmetic, especially in financial calculations.
+
+        /*
+         * =======Floating Point Arithmetic=======
+         * Floating-point arithmetic can lead to precision issues due to the way numbers are represented in binary.
+         * It's important to be cautious when comparing floating-point numbers.
+         */
+        System.out.println("=======Floating Point Arithmetic=======");
+        double d3 = 5.1,d4 = 2.3;
+        System.out.println(d3-d4); // Subtracting two doubles
+        System.out.println(d3-d4 == 2.8); // Checking if the result is equal to 2.8
+        // Note: Comparing floating-point numbers directly can lead to inaccuracies due to precision issues.
+        // It's better to use a tolerance value for comparison, especially in financial applications.
+        double tolerance = 0.0001; // Define a small tolerance value
+        boolean isEqual = Math.abs((d3 - d4) - 2.8) < tolerance; // Check if the difference is within the tolerance
+        System.out.println("Is the result equal to 2.8 within tolerance? " + isEqual);
+        // This approach ensures that minor floating-point inaccuracies do not affect the comparison result.
+
+        //subtracting two BigDecimal values
+        BigDecimal bd4 = BigDecimal.valueOf(5.1).setScale(1);
+        BigDecimal bd5 = BigDecimal.valueOf(2.3).setScale(1);
+        BigDecimal bd6 = bd4.subtract(bd5);
+        System.out.println("Subtracting two BigDecimal values: " + bd6);
     }
 }
