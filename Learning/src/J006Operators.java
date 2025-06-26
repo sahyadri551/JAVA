@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-public class Operators {
+public class J006Operators {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         /*
