@@ -22,7 +22,7 @@ public class J005Arrays {
             System.out.print(numbers[i] + " ");
         }
 
-        int[] arr = new int[5]; // Declare an array with a size of 5
+        //int[] arr = new int[5]; // Declare an array with a size of 5
         int arr2[] = new int[10]; // Declare and initialize an array with a size of 10
         System.out.println("\nArray arr2 length: " + arr2.length);
         arr2[0] = 10; // Assign a value to the first element
