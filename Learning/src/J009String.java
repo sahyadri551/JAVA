@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class J009String {
     public static void main(String[] args) {
@@ -56,7 +58,6 @@ public class J009String {
          * \\ - Backslash
          * \u0000 - Null
          */
-
         String s6="Hello\nWorld";
         System.out.println(s6+"\n");
         String s7="Hello\tWorld";
@@ -75,5 +76,25 @@ public class J009String {
         System.out.println(s13+"\n");
         String s14="Hello\u0020World";
         System.out.println(s14+"\n");
+
+        System.out.println();
+        System.out.println("======String Formatting======");
+        System.out.println();
+
+        String s15="Hello";
+        String s16="World";
+        System.out.println("s15 + s16 : "+s15+s16);
+        System.out.println("String.format(\"%s %s\",s15,s16) : "+String.format("%s %s",s15,s16));
+        System.out.printf("The no of lines till yet is %d",86);
+
+        System.out.println();
+        System.out.println("======Regular Expressions======");
+        System.out.println();
+        String emailPattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$";
+        Pattern pattern=Pattern.compile(emailPattern);
+        String random_text=" It is a random text containing a random email address:Uc9Yy@example.com";
+        Matcher matcher=pattern.matcher(random_text);
+        matcher.find();
+        System.out.println("matcher.group() : "+matcher.group());
     }  
 }
