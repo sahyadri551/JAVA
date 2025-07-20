@@ -32,6 +32,17 @@ public class J009String {
         System.out.println("s == s2 : " + (s==s2));
         System.out.println("s == s2 : " + (s.equals(s2)));
 
+        String s3=new String(" Hello ");
+        System.out.println("s == s3 : " + (s==s3));
+        System.out.println("s == s3 : " + (s.equals(s3)));
+        System.out.println("s == s3.intern() : " + (s==s3.intern()));
+
+        String s4="Smt";
+        String s5="smt";
+        System.out.println("s4 == s5 : " + (s4.equals(s5)));
+        System.out.println("s4 == s5.intern() : " + (s4.equalsIgnoreCase(s5)));
+
+
         
     }  
 }
