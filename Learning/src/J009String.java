@@ -40,9 +40,6 @@ public class J009String {
         String s4="Smt";
         String s5="smt";
         System.out.println("s4 == s5 : " + (s4.equals(s5)));
-        System.out.println("s4 == s5.intern() : " + (s4.equalsIgnoreCase(s5)));
-
-
-        
+        System.out.println("s4 == s5.intern() : " + (s4.equalsIgnoreCase(s5)));   
     }  
 }
