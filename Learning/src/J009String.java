@@ -90,7 +90,7 @@ public class J009String {
         System.out.println();
         System.out.println("======Regular Expressions======");
         System.out.println();
-        String emailPattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$";
+        String emailPattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$";
         Pattern pattern=Pattern.compile(emailPattern);
         String random_text=" It is a random text containing a random email address:Uc9Yy@example.com";
         Matcher matcher=pattern.matcher(random_text);
