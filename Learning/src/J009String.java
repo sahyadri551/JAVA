@@ -40,6 +40,40 @@ public class J009String {
         String s4="Smt";
         String s5="smt";
         System.out.println("s4 == s5 : " + (s4.equals(s5)));
-        System.out.println("s4 == s5.intern() : " + (s4.equalsIgnoreCase(s5)));   
+        System.out.println("s4 == s5.intern() : " + (s4.equalsIgnoreCase(s5))); 
+        
+        System.out.println();
+        System.out.println("======Escape Sequences======");
+        System.out.println();
+        /*
+         * \n - New line
+         * \t - Tab
+         * \b - Backspace (a step backward in the text or deletion of a character)
+         * \f - Form feed
+         * \r - Carriage return
+         * \" - Double quote
+         * \' - Single quote
+         * \\ - Backslash
+         * \u0000 - Null
+         */
+
+        String s6="Hello\nWorld";
+        System.out.println(s6+"\n");
+        String s7="Hello\tWorld";
+        System.out.println(s7+"\n");
+        String s8="Hello\bWorld";
+        System.out.println(s8+"\n");
+        String s9="Hello\fWorld";
+        System.out.println(s9+"\n");
+        String s10="Hello\rWorld";
+        System.out.println(s10+"\n");
+        String s11="Hello\"World";
+        System.out.println(s11+"\n");
+        String s12="Hello\'World";
+        System.out.println(s12+"\n");
+        String s13="Hello\\World";
+        System.out.println(s13+"\n");
+        String s14="Hello\u0020World";
+        System.out.println(s14+"\n");
     }  
 }
