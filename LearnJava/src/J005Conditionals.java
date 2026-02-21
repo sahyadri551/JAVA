@@ -65,5 +65,13 @@ void main(){
         case 12 -> IO.println("December");
         default -> IO.println("Invalid month");
     }
+    IO.print("Enter a day of the week:");
+    int day = scan.nextInt();
+    String type = switch (day) {
+    case 1, 2, 3, 4, 5 -> "Weekday";
+    case 6, 7 -> "Weekend";
+    default -> "Invalid";
+    };
+    IO.println(type);
     scan.close();
 }

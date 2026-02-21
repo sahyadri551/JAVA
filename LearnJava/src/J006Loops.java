@@ -36,5 +36,10 @@ void main(){
         }
     }
 
+    // array loop
+    int[] a = {1, 2, 3, 4, 5};
+    for(int o : a){
+        IO.println(o);
+    }
     
 }
