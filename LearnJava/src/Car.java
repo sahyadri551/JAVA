@@ -12,7 +12,6 @@
     float fuelConsumption;
     boolean isRunning;
     String carNumber;
-
     Car(int noOfWheels,int noOfSeats,float maxSpeed,float fuelCapacity,float fuelConsumption,String color,String carNumber){
         noOfCarsSold++;
         this.noOfWheels = noOfWheels;
