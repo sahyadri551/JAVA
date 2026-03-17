@@ -5,11 +5,9 @@ public class J017GetterSetter {
     private long price;
     private double fuelLevel;
 
-    public J017GetterSetter(String color, double fuelLevel, String model, long price) {
+    public J017GetterSetter(String color, double fuelLevel) {
         this.color = color;
         this.fuelLevel = fuelLevel;
-        this.model = model;
-        this.price = price;
     }
 
     public String getColor() {
