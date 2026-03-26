@@ -1,12 +1,14 @@
-void main(){
-    int a = Integer.parseInt(IO.readln("Enter a number:"));
-    int b = Integer.parseInt(IO.readln("Enter another number:"));
+void main() {
     try {
+        int a = Integer.parseInt(IO.readln("Enter a number:"));
+        int b = Integer.parseInt(IO.readln("Enter another number:"));
         int c = a / b;
         IO.println(c);
-    } catch (Exception e) {
-        IO.println("An error occurred: " + e.getMessage());
+    } catch (NumberFormatException e) {
+        IO.println("Error: You did not enter a valid integer.");
+    } catch (ArithmeticException e) {
+        IO.println("Error: Cannot divide by zero.");
     } finally {
-        IO.println("This will always execute");
+        IO.println("Execution complete.");
     }
 }

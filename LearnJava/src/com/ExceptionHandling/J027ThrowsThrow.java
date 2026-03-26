@@ -1,14 +1,13 @@
 package com.ExceptionHandling;
 class Test{
-    void test(String name) throws IllegalArgumentException, NullPointerException{
-        if(name == null || name.isEmpty()){
-            throw new NullPointerException("Name cannot be null or empty");
-        }
-        boolean valid =  name.trim().length() >= 3 && name.matches("[A-Za-z ]+");
-        if(!valid){
-            throw new IllegalArgumentException("Name must be at least 3 characters long and contain only letters and spaces");
-        }
-        System.out.println("Hello, " + name);
+    void test(String name) throws IllegalArgumentException{
+        if (name == null || name.trim().isEmpty()) {
+        throw new IllegalArgumentException("Name cannot be null or empty");
+    }
+    if (name.trim().length() < 3 || !name.matches("[A-Za-z ]+")) {
+        throw new IllegalArgumentException("Name must be at least 3 letters.");
+    }
+    System.out.println("Hello, " + name);
     }
     public static void main(String[] args) {
         Test test = new Test();
