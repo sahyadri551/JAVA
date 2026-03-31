@@ -2,5 +2,8 @@
     "sonarlint.connectedMode.project": {
         "connectionId": "sahyadri551",
         "projectKey": "sahyadri551_JAVA"
-    }
+    },
+    "telemetry.feedback.enabled": false,
+    "telemetry.editStats.enabled": false,
+    "sonarlint.disableTelemetry": true
 }
